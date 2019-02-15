@@ -1,8 +1,13 @@
 #include "sd.h"
 #include "uart.h"
 
+#ifndef PITON_SD_BASE_ADDR
 #define PITON_SD_BASE_ADDR  0xf000000000L
+#endif
+
+#ifndef PITON_SD_LENGTH
 #define PITON_SD_LENGTH     0xff0300000L
+#endif
 
 int init_sd()
 {
