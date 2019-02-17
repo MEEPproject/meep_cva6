@@ -16,7 +16,7 @@ file = args.filename[0];
 
 # check that file exists
 if not os.path.isfile(file):
-    print("File {} does not exist.".format(filename))
+    print("File {} does not exist.".format(args.filename))
     sys.exit(1)
 
 filename = os.path.splitext(file)[0]
