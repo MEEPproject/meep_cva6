@@ -25,12 +25,20 @@ void write_serial(char a)
 
 void init_uart()
 {
+    //write_reg_u8(UART_INTERRUPT_ENABLE, 0x00); // Disable all interrupts
+    //write_reg_u8(UART_LINE_CONTROL, 0x80);     // Enable DLAB (set baud rate divisor)
+    //write_reg_u8(UART_DLAB_LSB, 0x1B);         // Set divisor to 27 (lo byte) 115200 baud
+    //write_reg_u8(UART_DLAB_MSB, 0x00);         //                   (hi byte)
+    //write_reg_u8(UART_LINE_CONTROL, 0x03);     // 8 bits, no parity, one stop bit
+    //write_reg_u8(UART_FIFO_CONTROL, 0xC7);     // Enable FIFO, clear them, with 14-byte threshold
+    //write_reg_u8(UART_MODEM_CONTROL, 0x20);    // Autoflow mode
+
     write_reg_u8(UART_INTERRUPT_ENABLE, 0x00); // Disable all interrupts
-    write_reg_u8(UART_LINE_CONTROL, 0x80);     // Enable DLAB (set baud rate divisor)
-    write_reg_u8(UART_DLAB_LSB, 0x1B);         // Set divisor to 27 (lo byte) 115200 baud
+    write_reg_u8(UART_FIFO_CONTROL, 0xC7);     // Enable FIFO, clear them, with 14-byte threshold
+    write_reg_u8(UART_LINE_CONTROL, 0x83);     // 8 bits, no parity, one stop bit
+    write_reg_u8(UART_DLAB_LSB, 0x24);         // Set divisor to 27 (lo byte) 115200 baud
     write_reg_u8(UART_DLAB_MSB, 0x00);         //                   (hi byte)
     write_reg_u8(UART_LINE_CONTROL, 0x03);     // 8 bits, no parity, one stop bit
-    write_reg_u8(UART_FIFO_CONTROL, 0xC7);     // Enable FIFO, clear them, with 14-byte threshold
     write_reg_u8(UART_MODEM_CONTROL, 0x20);    // Autoflow mode
 }
 
