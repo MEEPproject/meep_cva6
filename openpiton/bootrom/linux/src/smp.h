@@ -2,7 +2,7 @@
 
 // The hart that non-SMP tests should run on
 #ifndef NONSMP_HART
-#define NONSMP_HART 0
+#define NONSMP_HART 1
 #endif
 
 // The maximum number of HARTs this code supports
