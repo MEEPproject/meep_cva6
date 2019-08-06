@@ -11,7 +11,6 @@ _prog_start:
   smp_pause(s1, s2)
   li sp, 0x84000000
   call main
-  smp_resume(s1, s2)
   csrr a0, mhartid
   la a1, _dtb
   li s1, DRAM_BASE
