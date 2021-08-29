@@ -483,7 +483,7 @@ package ariane_pkg;
             EQ, NE, LTS, GES, LTU, GEU: return 1'b1;
             default                   : return 1'b0; // all other ops
         endcase
-    endfunction;
+    endfunction
 
     // -------------------------------
     // Extract Src/Dst FP Reg from Op
@@ -503,7 +503,7 @@ package ariane_pkg;
             endcase
         end else
             return 1'b0;
-    endfunction;
+    endfunction
 
     function automatic logic is_rs2_fpr (input fu_op op);
         if (FP_PRESENT) begin // makes function static for non-fp case
@@ -519,7 +519,7 @@ package ariane_pkg;
             endcase
         end else
             return 1'b0;
-    endfunction;
+    endfunction
 
     // ternary operations encode the rs3 address in the imm field, also add/sub
     function automatic logic is_imm_fpr (input fu_op op);
@@ -532,7 +532,7 @@ package ariane_pkg;
             endcase
         end else
             return 1'b0;
-    endfunction;
+    endfunction
 
     function automatic logic is_rd_fpr (input fu_op op);
         if (FP_PRESENT) begin // makes function static for non-fp case
@@ -549,7 +549,7 @@ package ariane_pkg;
             endcase
         end else
             return 1'b0;
-    endfunction;
+    endfunction
 
     function automatic logic is_amo (fu_op op);
         case (op) inside
