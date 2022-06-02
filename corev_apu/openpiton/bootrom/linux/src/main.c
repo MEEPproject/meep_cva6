@@ -9,9 +9,7 @@ int main()
     init_uart(UART_FREQ, 115200);
     print_uart(info);
 
-    print_uart("sd initialized!\r\n");
-
-    int res = gpt_find_boot_partition((uint8_t *)0x80000000UL, 2 * 32768);
+    print_uart("MEEP-CVA6 bootloader\r\n");
 
     return 0;
 }
