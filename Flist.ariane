@@ -31,10 +31,13 @@ core/include/axi_intf.sv
 core/fpu/src/fpnew_pkg.sv
 core/include/cvxif_pkg.sv
 common/submodules/common_cells/src/cf_math_pkg.sv
-core/include/instr_tracer_pkg.sv
 core/cvxif_example/include/cvxif_instr_pkg.sv
 corev_apu/rv_plic/rtl/rv_plic_reg_pkg.sv
 common/local/util/sram.sv
+common/local/util/axi_master_connect.sv 
+common/local/util/axi_master_connect_rev.sv 
+common/local/util/axi_slave_connect.sv 
+common/local/util/axi_slave_connect_rev.sv
 common/submodules/common_cells/src/deprecated/rrarbiter.sv
 common/submodules/common_cells/src/deprecated/fifo_v1.sv
 common/submodules/common_cells/src/deprecated/fifo_v2.sv
@@ -132,6 +135,7 @@ corev_apu/fpga/src/axi_slice/src/axi_r_buffer.sv
 corev_apu/fpga/src/axi_slice/src/axi_aw_buffer.sv
 corev_apu/register_interface/src/apb_to_reg.sv
 corev_apu/register_interface/src/reg_intf.sv
+corev_apu/register_interface/src/reg_intf_pkg.sv 
 core/fpu/src/fpu_div_sqrt_mvp/hdl/defs_div_sqrt_mvp.sv
 core/fpu/src/fpu_div_sqrt_mvp/hdl/control_mvp.sv
 core/fpu/src/fpu_div_sqrt_mvp/hdl/div_sqrt_mvp_wrapper.sv
@@ -153,8 +157,6 @@ core/fpu/src/fpnew_rounding.sv
 core/fpu/src/fpnew_top.sv
 core/pmp/src/pmp.sv
 core/pmp/src/pmp_entry.sv
-common/local/util/instr_tracer.sv
-common/local/util/instr_tracer_if.sv
 core/cvxif_example/cvxif_example_coprocessor.sv
 core/cvxif_example/instr_decoder.sv
 common/submodules/common_cells/src/counter.sv
