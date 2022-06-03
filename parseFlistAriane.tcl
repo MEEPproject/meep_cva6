@@ -11,7 +11,7 @@ foreach line $data {
  set line [regsub {cpp.*} $line ""]
  set line [regsub {//.*} $line ""]
  set line [regsub {#.*} $line ""]
- set line [regsub {../*} $line ""]
+# set line [regsub {../*} $line ""]
  if  {[string trim $line] eq ""} then continue
  lappend ARIANE_RTL_FILES "${ARIANE_ROOT}/${line}" 
  puts "${line}"
